@@ -1,0 +1,41 @@
+<body>
+    <div class="wrapper">
+      <h2>ADD EVENT</h2>
+      <form  [formGroup]="eventForm" (ngSubmit)="event()">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your User Id" formControlName="userid" name="userid" required>
+        </div>
+
+        <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.eventForm.get('userid')?.touched || this.eventForm.get('userid')?.dirty) && this.eventForm.get('userid')?.errors " id="error">Invalid userid</div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Enter your Tittle" formControlName="tittle" name="tittle" required>
+        </div>
+
+        <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.eventForm.get('tittle')?.touched || this.eventForm.get('tittle')?.dirty) && this.eventForm.get('tittle')?.errors " id="error">Invalid tittle</div>
+
+        <div class="input-box">
+          <input type="date" formControlName="date" name="date" required>
+        </div>
+
+        <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.eventForm.get('date')?.dirty) && this.eventForm.get('date')?.errors " id="error">Invalid date</div>
+
+        <div class="input-box">
+            <input type="text" placeholder="Enter Your Event" formControlName="event" name="event" required>
+          </div>
+
+          <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.eventForm.get('event')?.touched || this.eventForm.get('event')?.dirty) && this.eventForm.get('event')?.errors " id="error">Invalid event</div>
+
+        <div class="policy">
+          <input type="checkbox">
+          <h3>I accept all terms & condition</h3>
+        </div>
+        <div class="input-box button">
+          <input type="Submit" value="NEW REMINDER">
+        </div>
+        <div class="text">
+          <h3>Already have an account? <a href="#">Login now</a></h3>
+        </div>
+      </form>
+    </div>
+  </body>

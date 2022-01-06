@@ -1,0 +1,71 @@
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="../../assets/register/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign Up</h3>
+              <p class="mb-4">Please Register Your Account!!!</p>
+            </div>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <div class="form-group first">
+                    <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email" style="font-size: 14px; color:#b3b3b3 ; " required>
+                  </div>
+                
+                  <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.registerForm.get('email')?.touched || this.registerForm.get('email')?.dirty) && this.registerForm.get('email')?.errors " id="error">Invalid email</div>
+
+              <div class="form-group first" style="margin-top: 10px;">
+                <input type="text" class="form-control" formControlName="username" name="username"  placeholder="Username" style="font-size: 14px; color:#b3b3b3 ; " required>
+              </div>
+
+              <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.registerForm.get('username')?.touched || this.registerForm.get('username')?.dirty) && this.registerForm.get('username')?.errors " id="error">Invalid username</div>
+
+              <div class="form-group first" style="margin-top: 10px;">
+                <input type="text" class="form-control" formControlName="userid" name="userid"  placeholder="User Id" style="font-size: 14px; color:#b3b3b3 ; " required>
+              </div>
+
+              <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.registerForm.get('userid')?.touched || this.registerForm.get('userid')?.dirty) && this.registerForm.get('userid')?.errors " id="error">Invalid userid</div>
+
+              <div class="form-group last mb-4" style="margin-top: 10px;">
+                <input type="password" class="form-control" formControlName="password" name="password"  placeholder="Password" style="font-size: 14px; color:#b3b3b3 ; " required>
+              </div>
+            
+              <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.registerForm.get('password')?.touched || this.registerForm.get('password')?.dirty) && this.registerForm.get('password')?.errors " id="error">invalid password</div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+              </div>
+
+              <input type="submit" value="register" [disabled]="registerForm.invalid" class="btn btn-block btn-primary">
+
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook" style="margin-left: 10px;">
+                  <span  class="icon-facebook mr-3"></span> 
+                </a>
+                <a href="#" class="twitter" style="margin-left: 10px;">
+                  <span class="icon-twitter mr-3"></span> 
+                </a>
+                <a href="#" class="google" style="margin-left: 10px;">
+                  <span class="icon-google mr-3"></span> 
+                </a>
+              </div>
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="../../assets/register/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4">Please Log In!!!</p>
+            </div>
+            <form  [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="form-group first" style="margin-top: 10px;">
+                <input type="text" class="form-control" id="userid" formControlName="userid" name="userid"  placeholder="User Id" style="font-size: 14px; color:#b3b3b3 ; " required>
+              </div>
+
+              <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.loginForm.get('userid')?.touched || this.loginForm.get('userid')?.dirty) && this.loginForm.get('userid')?.errors " id="error">Invalid User Id</div>
+
+              <div class="form-group last mb-4" style="margin-top: 10px;">
+                <input type="password" class="form-control" id="password" formControlName="password" name="password"  placeholder="Password" style="font-size: 14px; color:#b3b3b3 ; " required>
+              </div>
+              
+              <div style="color: #000000; font-size: 14px;  margin-bottom: 10px; font-family: Arial, Helvetica, sans-serif; margin-top: 2px;" *ngIf="(this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty) && this.loginForm.get('password')?.errors " id="error">Invalid Password</div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+              </div>
+
+              <input type="submit" value="login" class="btn btn-block btn-primary" [disabled]="loginForm.invalid">
+
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook" style="margin-left: 10px;">
+                  <span  class="icon-facebook mr-3"></span> 
+                </a>
+                <a href="#" class="twitter" style="margin-left: 10px;">
+                  <span class="icon-twitter mr-3"></span> 
+                </a>
+                <a href="#" class="google" style="margin-left: 10px;">
+                  <span class="icon-google mr-3"></span> 
+                </a>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

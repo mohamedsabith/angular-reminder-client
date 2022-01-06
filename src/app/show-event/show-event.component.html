@@ -1,0 +1,31 @@
+<div class='dashboard'>
+    <div class="dashboard-nav">
+        <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"class="brand-logo">
+            <i class="fas fa-bell"></i> <span>REMINDER</span></a></header>
+        <nav class="dashboard-nav-list"><a [routerLink]="['']" class="dashboard-nav-item"><i class="fas fa-home"></i>Home </a>
+            <a class="dashboard-nav-item active"><i class="fas fa-bookmark"></i> Event </a>
+            <div class='dashboard-nav-dropdown'><a [routerLink]="['/login']" class="dashboard-nav-item"><i class="fas fa-users"></i>Login</a></div>
+            <a [routerLink]="['/dashboard']"class="dashboard-nav-item"><i class="fas fa-cogs"></i> Add Event</a>
+            <a [routerLink]="['/register']" class="dashboard-nav-item"><i class="fas fa-user"></i> SIgn Up</a>
+          <div class="nav-item-divider"></div>
+          <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+        </nav>
+    </div>
+    <div class='dashboard-app'>
+        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+        <div class='dashboard-content'>
+            <div class='container'>
+                <div class="row">
+                    <div class="column">
+                      <div class="card" *ngFor="let events of event">
+                        <h3 style="text-transform: uppercase;">{{events.tittle}}</h3>
+                        <p>{{events.date}}</p>
+                        <p style="text-transform: uppercase;">{{events.event}}</p>
+                        <button style="background-color: #f44336; color: white; text-align: center; border-radius: 4px; border: 2px solid #fff;">DELETE</button>
+                        <button style="background-color: #f1f436; color: white; text-align: center; border-radius: 4px; border: 2px solid #fdfdfd; margin-top: 10px;">UPDATE</button>
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
